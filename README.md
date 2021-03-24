@@ -8,17 +8,17 @@ A directory is created in the directory specified in $BACKUPDIR variable.
 
 Underneath of this directory are the following sub-directories
 
-./apiresources
+  ./apiresources
 
-./apiresources/non-namespaced --> These are cluster-wide resources
+  ./apiresources/non-namespaced --> These are cluster-wide resources
 
-./apiresources/non-namespaced/<typeofobject>/<nameofobject> --> The name of the object contains the contents of the resource in YAML format 
+  ./apiresources/non-namespaced/<typeofobject>/<nameofobject> --> The name of the object contains the contents of the resource in YAML format 
 
-./apiresources/namespaced/<namespace-name>/<typeofobject>/<nameofobject> --> The name of the object contains the contents of the resource in YAML format
+  ./apiresources/namespaced/<namespace-name>/<typeofobject>/<nameofobject> --> The name of the object contains the contents of the resource in YAML format
 
-./pods.txt --> output of oc get pods -o wide 
+  ./pods.txt --> output of oc get pods -o wide 
 
-./events.txt --> output of oc get events
+  ./events.txt --> output of oc get events
   
 Basically, the script loops through all non-namespaced resources first and creates a directory structure based on that.  Following the creation of the non-namespaced resources, all namespaced resources are created inside a subdirectory for each namespace that exists in the cluster.  Lastly, a pods.txt and events.txt file is created to show the status of the cluster at the time of backup.
 
