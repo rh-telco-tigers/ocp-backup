@@ -12,9 +12,9 @@ Here is a description of the directories created under $BACKUPDIR/<datetime>
 
   ./apiresources/non-namespaced --> These are cluster-wide resources
 
-  ./apiresources/non-namespaced/<typeofobject>/<nameofobject> --> The name of the object contains the contents of the resource in YAML format 
+  ./apiresources/non-namespaced/$typeofobject/$nameofobject --> The name of the object contains the contents of the resource in YAML format 
 
-  ./apiresources/namespaced/<namespace-name>/<typeofobject>/<nameofobject> --> The name of the object contains the contents of the resource in YAML format
+  ./apiresources/namespaced/<namespace-name>/$typeofobject/$nameofobject --> The name of the object contains the contents of the resource in YAML format
 
   ./pods.txt --> output of oc get pods -o wide 
 
