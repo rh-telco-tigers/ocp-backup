@@ -4,9 +4,9 @@ This Shell script will enumerate or backup all resources inside of Openshift int
 
 How it Works:
 
-A directory is created in the directory specified in $BACKUPDIR variable.
+Basically, the script loops through all non-namespaced resources first and creates a directory structure based on that.  Following the creation of the non-namespaced resources, all namespaced resources are created inside a subdirectory for each namespace that exists in the cluster.  Lastly, a pods.txt and events.txt file is created to show the status of the cluster at the time of backup.
 
-Underneath of this directory are the following sub-directories
+Here is a description of the directories created under $BACKUPDIR/<datetime>
 
   ./apiresources
 
@@ -20,8 +20,6 @@ Underneath of this directory are the following sub-directories
 
   ./events.txt --> output of oc get events
   
-Basically, the script loops through all non-namespaced resources first and creates a directory structure based on that.  Following the creation of the non-namespaced resources, all namespaced resources are created inside a subdirectory for each namespace that exists in the cluster.  Lastly, a pods.txt and events.txt file is created to show the status of the cluster at the time of backup.
-
 Use-Cases:
 
 There are a few reasons this may be useful
